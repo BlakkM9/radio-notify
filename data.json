@@ -1,0 +1,7 @@
+{
+  "recording_length": 30,
+  "check_interval": 5,
+  "stream_url": "http://stream.laut.fm/hoerspieltalk",
+  "language": "de-DE",
+  "email_receiver": "test@localhost"
+}

@@ -6,14 +6,17 @@ if (not os.path.isdir("./rec")):
     os.mkdir("./rec")
 
 # remove all files in record (if present)
-if (os.path.isfile("current.wav")):
-    os.remove("current.wav")
+if (os.path.isfile("./rec/current.wav")):
+    os.remove("./rec/current.wav")
 
-if (os.path.isfile("ready.mp3")):
-    os.remove("ready.mp3")
+if (os.path.isfile("./rec/ready.mp3")):
+    os.remove("./rec/ready.mp3")
 
-if (os.path.isfile("recording.mp3")):
-    os.remove("recording.mp3")
+if (os.path.isfile("./rec/recording.mp3")):
+    os.remove("./rec/recording.mp3")
+
+if (os.path.isfile("./rec/current.mp3")):
+    os.remove("./rec/current.mp3")
 
 # start stream saver
 a = subprocess.Popen(["python", "audiostream.py"])
