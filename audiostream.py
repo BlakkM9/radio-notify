@@ -16,10 +16,10 @@ def main():
         data = json.load(f)
 
     RECORDING_LENGTH = data["recording_length"]
-    STREAM_URL = data["stream_url"]
+    stream_url = data["stream_url"]
 
     # get stream
-    r = requests.get(STREAM_URL, stream=True)
+    r = requests.get(stream_url, stream=True)
     # extract bitrate
     bitrate = r.headers["icy-br"]
     try:
@@ -36,7 +36,7 @@ def main():
 
     # a_print(str(r.headers))
 
-    a_print("Stream URL: " + STREAM_URL)
+    a_print("Stream URL: " + stream_url)
     a_print("Station name: " + radio_name)
     a_print("Bitrate: " + bitrate)
 
