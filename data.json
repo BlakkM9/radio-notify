@@ -1,7 +1,7 @@
 {
   "recording_length": 30,
   "check_interval": 5,
-  "stream_url": "http://stream.laut.fm/hoerspieltalk",
+  "stream_url": "http://ndr-ndrinfo-niedersachsen.cast.addradio.de/ndr/ndrinfo/niedersachsen/mp3/128/stream.mp3",
   "language": "de-DE",
-  "email_receiver": "test@localhost"
+  "email_receiver": "blakkm92@gmail.com"
 }
