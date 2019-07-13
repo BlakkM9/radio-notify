@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+import re
 
 import utils
 
@@ -19,19 +20,30 @@ def main():
 
     # get stream
     r = requests.get(STREAM_URL, stream=True)
-    # get bitrate
+    # extract bitrate
     bitrate = r.headers["icy-br"]
-
-    needed_iterations = round((int(bitrate) * RECORDING_LENGTH) / 8);
+    try:
+        # check if only int number was in header
+        int(bitrate)
+    except:
+        # try to parse
+        a_print(bitrate + " is invalid bitrate format, parsing")
+        rates = re.split(r"\D+", bitrate)
+        bitrate = rates[0]
 
     # get radio name
     radio_name = utils.get_radio_name(r.headers)
 
+    # a_print(str(r.headers))
+
     a_print("Stream URL: " + STREAM_URL)
     a_print("Station name: " + radio_name)
     a_print("Bitrate: " + bitrate)
+
+    needed_iterations = round((int(bitrate) * RECORDING_LENGTH) / 8);
+
     a_print("Iterations: " + str(needed_iterations))
-    # a_print(str(r.headers))
+
     print()
 
     while True:
