@@ -1,2 +1,3 @@
-/rec
-/ffmpeg
+__pycache__/
+rec/
+ffmpeg/
