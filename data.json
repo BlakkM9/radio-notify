@@ -1,7 +1,15 @@
 {
   "recording_length": 30,
   "check_interval": 5,
-  "stream_url": "http://ndr-ndrinfo-niedersachsen.cast.addradio.de/ndr/ndrinfo/niedersachsen/mp3/128/stream.mp3",
+  "stream_urls": {
+    "Hoerspieltalk": "http://stream.laut.fm/hoerspieltalk",
+    "B5 aktuell": "https://dg-br-https-fra-dtag-cdn.sslcast.addradio.de/br/b5aktuell/live/mp3/128/stream.mp3",
+    "1.FM - Absolute Trance (Euro) Radio": "http://sc-trance.1.fm:8040",
+    "Antenne Bayern": "https://mp3channels.webradio.de/antenne?&aw_0_1st.playerid=AntenneBayernWebPlayer&aw_0_1st.listenerid=undefined&aw_0_1st.skey=1562885282&aw_0_1st.gpslat=47.852&aw_0_1st.gpslong=8.77&aw_0_req.gdpr=true&aw_0_1st.spotcom=%5B%5D",
+    "Inforadio RBB": "https://dg-rbb-https-fra-dtag-cdn.sslcast.addradio.de/rbb/inforadio/live/mp3/128/stream.mp3",
+    "Deutschlandradio": "https://dg-dradio-https-fra-dtag-cdn.sslcast.addradio.de/dradio/dlf/live/mp3/128/stream.mp3"
+  },
   "language": "de-DE",
-  "email_receiver": "blakkm92@gmail.com"
+  "email_receiver": "blakkm92@gmail.com",
+  "telegram_chat_id": 43178708
 }
