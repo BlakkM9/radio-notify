@@ -1,3 +1,10 @@
+import smtplib
+from email import encoders
+from email.mime.base import MIMEBase
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+import data
 
 
 def send_email(found_words_combined):
@@ -7,8 +14,8 @@ def send_email(found_words_combined):
 
     message = MIMEMultipart()
     message["From"] = sender
-    message["To"] = email_receiver
-    message["Subject"] = "Keyword was mentionen on " + radio_name
+    message["To"] = data.email_receiver
+    message["Subject"] = "Keyword was mentionen on " + data.radio_name
 
     # body
     body = "Found keywords: " + found_words_combined + "."
@@ -33,8 +40,12 @@ def send_email(found_words_combined):
     # send e-mail
     try:
         server = smtplib.SMTP("localhost")
-        server.sendmail(sender, email_receiver, text)
+        server.sendmail(sender, data.email_receiver, text)
         server.close()
-        s_print("Successfully send e-mail")
+        e_print("Successfully send e-mail")
     except smtplib.SMTPException as e:
-        s_print("Failed to send e-mail " + e)
+        e_print("Failed to send e-mail " + str(e))
+
+
+def e_print(string):
+    print("[E] " + string)
